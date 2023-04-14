@@ -1,0 +1,259 @@
+
+ :root {
+    --bg-primary: #0d28a6;
+    --bg-grey: #cfd4ed;
+    --bg-success: #5cb85f;
+    --bg-white: #fff;
+  }
+
+/* global */
+  body{
+    background-color: var(--bg-white);
+  }
+
+  .fw-300{
+    font-weight: 300;
+  }
+  .fw-400{
+    font-weight: 400;
+  }
+  .fw-700{
+    font-weight: 700;
+  }
+
+  .fs-12 {
+    font-size: 12px;
+    line-height: 18px;
+    font-weight: 700;
+  }
+  .fs-14 {
+    font-size: 14px;
+    line-height: 20px;
+    font-weight: 700;
+  }
+  .fs-16 {
+    font-size: 16px;
+    line-height: 24px;
+    font-weight: 700;
+  }
+  .fs-20 {
+    font-size: 20px;
+    line-height: 30px;
+    font-weight: 700;
+  }
+  
+/* Navbar */
+
+.navbar {
+    width: 95%;
+    z-index: 100;
+    background-color: var(--bg-white);
+    box-shadow: 0 2px 4px 0 rgba(0,0,0,.2);
+  }
+  .navbar .nav-logo {
+    width: 100px;
+    height: 34px;
+    background-color: var(--bg-grey);
+  }
+  .form-control::placeholder {
+    color: #8a8a8a;
+    font-family: "IBMPlexSans-Light";
+  }
+  
+  .btn-outline-primary {
+    border-color: var(--bg-primary);
+    color: var(--bg-primary);
+  }
+  .btn-outline-success:hover {
+    background-color: var(--bg-primary);
+  }
+  
+  .rigth-wrap {
+    overflow-x: hidden;
+    width: 93%;
+    margin-left: 80px;
+  }
+  
+  .user-icon {
+    background-color: var(--bg-grey);
+  }
+  
+  .user-wrap p {
+    font-family: "IBMPlexSans-Light";
+  }
+  .fi-menu {
+    margin-left: 95px;
+  }
+
+
+/* Menu */
+  
+.fixed-menu {
+    max-width: 80px !important;
+    width: inherit;
+    background-color: var(--bg-primary);
+  }
+
+.fixed-menu .logo {
+    width: 34px;
+    height: 34px;
+    background-color: var(--bg-grey);
+  }
+
+.menu-wrap div:nth-child(2) {
+    background: #ffffff4d;
+  }
+
+.menu p{
+        
+    width: 58px;
+    height: 18px;
+    font-family: 'IBM Plex Sans';
+    font-style: normal;
+    font-weight: 300;
+    font-size: 12px;
+    line-height: 18px;
+    text-align: center;
+}
+
+.menu i{
+    font-size: 26px;
+    color: white;
+}
+
+/* Sidebar */
+
+.sidebar {
+    width: 220px !important;
+    height: 100vh;
+  }
+  
+  .fixed-sidebar {
+    padding-top: 80px;
+    background: #fff;
+    margin-right: 40px;
+  }
+  .sidebar p,
+  .sidebar a {
+    font-family: "IBMPlexSans-Regular";
+    font-size: 14px;
+    line-height: 20px;
+    font-weight: 700;
+    color: #8a8a8a;
+    
+  }
+  .sidebar p:last-child,
+  .sidebar a:last-child {
+    color: #151515;
+    background-color: var(--bg-grey);
+  }
+
+  /* Main */
+
+   .breadcrumb img {
+    width: 4px;
+    height: 8px;
+  }
+  
+  .breadcrumb .active {
+    color: #222222;
+    font-family: "IBMPlexSans-Light";
+  }
+
+  .breadcrumb .btn-add{
+    width: 140px;
+    height: 36px;
+    border-radius: 2px;
+    background: #0D28A6;
+  }
+  
+  .main {
+    padding: 120px 5px !important;
+  }
+
+  .main .btn-primary {
+    height: 36px;
+    background-color: var(--bg-primary);
+    font-family: "IBMPlexSans-Medium";
+  }
+
+  .main .btn-outline-primary {
+    outline: var(--bg-primary);
+  }
+
+  .filter .btn-outline-secondary {
+    background-color: #fff;
+    border: 1px solid #aeb7e1;
+    color: #aeb7e1;
+  }
+  .filter .active {
+    background-color: var(--bg-grey);
+    color: var(--bg-primary);
+  }
+
+  .cars-container .container {
+    max-width: 1047px;
+  }
+  .cars-container .card {
+    background: #ffffff;
+    box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.15);
+    border-radius: 8px;
+    padding: 31px 17px;
+    border: none;
+    /* height: 530px; */
+  }
+  .cars-container .card > img {
+    margin: 0 auto;
+    padding: 17px;
+    width: 100%;
+    height: 240px;
+  }
+  .cars-container .card-title {
+    font-family: "IBMPlexSans-Regular";
+  }
+  
+  .cars-container .clock span {
+    font-family: "IBMPlexSans-Light";
+  }
+  
+  .form-card {
+    background-color: #fff;
+    padding-top: 30px !important;
+    padding-bottom: 30px !important;
+  }
+  .form-card .form-label {
+    color: #3c3c3c;
+  }
+  .form-card .form-label,
+  .form-card .form-control::placeholder,
+  .form-card select,
+  .form-card .form-text,
+  .form-card .form-control {
+    font-family: "IBMPlexSans-Light";
+    color: #8a8a8a;
+    font-size: 12px;
+    line-height: 18px;
+  }
+  .form-card .form-label span {
+    color: #ff0000;
+  }
+  .form-card .form-control,
+  .form-card select {
+    color: #151515 !important;
+    width: 339px;
+  }
+  form .btn-wrap a {
+    width: 69px;
+    height: 36px;
+  }
+  form > .row {
+    margin-top: 100px;
+  }
+  .btn-success {
+    background-color: var(--bg-success);
+  }
+  .btn-outline-success {
+    border: 1px solid var(--bg-success);
+  }
+
+ 

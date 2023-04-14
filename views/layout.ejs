@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <!-- Bootstrap CSS -->
+    <link rel="shortcut icon" href="./images/icon.png" type="image" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <!-- Box Icon -->
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <!-- Bootstrap Icon -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css" />
+    <!-- Style CSS -->
+    <link rel="stylesheet" href="./assets/css/style.css" />
+    <link rel="stylesheet" href="/css/sweetalert2.min.css" />
+
+    <title>Dashboard Management</title>
+  </head>
+
+  <body>
+    <main>
+        <div class="row mx-0 d-flex">
+            <!-- Side Menu -->
+            <div class="col-md-1 col-lg-1 col-xl-1 px-0">
+                <div class="fixed-menu h-100 position-fixed py-3 px-0">
+                    <div class="logo m-auto"></div>
+                    <div class="menu-wrap mt-3">
+                        <div class="menu d-flex flex-column align-items-center p-2 justify-content-center">
+                            <i class='bx bx-home-alt'></i>
+                            <p class="fs-12 text-white mb-0">Dashboard</p>
+                        </div>
+                        <div class="menu d-flex flex-column align-items-center p-2 justify-content-center">
+                            <img src="./assets/images/fi_truck.svg" alt="">
+                            <p class="fs-12 text-white mb-0 fw-bold">Cars</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- End Side Menu -->
+
+            <div class="col-md-12 rigth-wrap px-0">
+                <!-- Navbar -->
+                <nav class="navbar navbar-expand-lg py-3 position-fixed " >
+                    <div class="container-fluid">
+                        <div class="nav-logo"></div>
+                        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                            <img class="fi-menu" src="./assets/images/fi_menu.png" alt="menu">
+                            <form class="d-flex ms-auto">
+                                <input class="form-control" type="search" placeholder="Search" aria-label="Search">
+                                <button class="btn btn-outline-primary" type="submit">Search</button>
+                            </form>
+                            <div class="user-wrap d-flex align-items-center ms-4 gap-3">
+                                <div class="user-icon px-3 py-2 rounded-circle">R</div>
+                                <p class="mb-0 fw-bold">Risa Irmawati</p>
+                                <img src="./assets/images/fi_chevron-down.svg" alt="vector down">
+                            </div>
+                        </div>
+                    </div>
+                </nav>
+                <!-- End Navbar -->
+                <div class="row d-flex">
+                    <div class="col-md-2">
+                        <!-- Sidebar -->
+                        <div class="col-md-2 col-lg-2 col-xl-2">
+                            <div class="sidebar position-fixed">
+                                <div class="fixed-sidebar h-100">
+                                    <a class="text-capitalize fw-bold mb-0 py-3 ps-4 d-block text-decoration-none">cars</a>
+                                    <a class="fw-bold mb-0 py-3 ps-4 d-block text-decoration-none fs-16" href="/">List Car</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                        <!-- End Sidebar -->
+                        <!-- Main  Body -->
+                    <div class="col-md-10">
+                            <div class="main">
+                                <div class="breadcrumb d-flex align-items-center gap-2">
+                                    <span class="fs-12 fw-bold"> Cars </span>
+                                    <img src="./assets/images/Vector.svg" alt="arrow right" style="width: 10px; height: 10px;">
+                                    <span class="active fs-12" style="font-weight: 300;">List Car</span>
+                                </div>
+                                <div class="row align-items-center mt-3">
+                                    <div class="col-md-6">
+                                      <h1 class="main-title fs-20 m-0 fw-bold">List Car</h1>
+                                    </div>
+                                    <div class="col-md-6 d-flex justify-content-end">
+                                      <a class="btn btn-primary text-white fs-14 fw-bold" href="/cars/create">
+                                        <img class="me-2" src="./assets/images/fi_plus.svg" alt="plus" />
+                                        Add New Car
+                                      </a>
+                                    </div>
+                                </div>
+
+                                <div class="row">
+                                    <div class="filter d-flex gap-3 my-4">
+                                      <button class="btn btn-outline-primary active">All</button>
+                                      <button class="btn btn-outline-secondary">Small</button>
+                                      <button class="btn btn-outline-secondary">Medium</button>
+                                      <button class="btn btn-outline-secondary">Large</button>
+                                    </div>
+                                </div>
+
+                                <div class="cars-container">
+                                    <div class="row">
+                                        <!-- Card -->
+                                        <% car.forEach((car) => { %>
+                                        <div class="col-md-4 mt-4">
+                                            <div class="card">
+                                                <img src="./assets/images/image 1.svg" alt="car">
+                                                <div class="car-body p-0">
+                                                    <h5 class="card-title mt-3 mb-1 fs-14" style="font-weight: 400;"><%= car.name %></h5>
+                                                    <p class="card-harga mb-1 fs-16 fw-bold">Rp. <%= car.rentPrice %></p>
+                                                    <div class="card-info mt-3">
+                                                        <div class="info">
+                                                          <p class="clock d-flex fs-14">
+                                                            <img class="me-2" src="./assets/images/fi_clock.svg" alt="clock icon" />
+                                                            <span class="ml-2 fw-300">Updated at</span>
+                                                          </p>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="row mt-4">
+                                                    <div class="col-md-6">
+                                                      <button style="width: 100%" class="delete_btn font-weight-bold btn btn-outline-danger d-flex align-items-center justify-content-center">
+                                                        <img class="me-2" src="./assets/images/fi_trash-2.svg" alt="" />Delete
+                                                      </button>
+                                                    </div>
+                                                    <div class="col-md-6">
+                                                      <button style="width: 100%;"
+                                                        class=" edit_btn font-weight-bold btn btn-success btn-outline-success d-flex align-items-center justify-content-center text-white me-0"
+                                                        >
+                                                        <img class="me-2" src="./assets/images/fi_edit.svg" alt="" />Edit</button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <% }) %>
+                                    </div>
+                                </div>
+                            </div>
+                    </div>
+                        <!-- End Main Body -->
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+    </main>
+
+    <!-- Bootstrap Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+    </script>
+    <script src="/javascripts/sweetalert2.min.js"></script>
+  </body>
+</html>

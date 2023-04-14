@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <!-- Bootstrap CSS -->
+    <link rel="shortcut icon" href="./images/icon.png" type="image" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <!-- Box Icon -->
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <!-- Bootstrap Icon -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css" />
+    <!-- Style CSS -->
+    <link rel="stylesheet" href="./assets/css/style.css" />
+    <link rel="stylesheet" href="/css/sweetalert2.min.css" />
+
+    <title>Dashboard Management</title>
+  </head>
+
+  <body>
+    <main>
+        <div class="row mx-0 d-flex">
+            <!-- Side Menu -->
+            <%- include('side-menu.ejs') %>
+            <!-- End Side Menu -->
+
+            <div class="col-md-12 rigth-wrap px-0">
+                <!-- Navbar -->
+                <%- include('navbar.ejs') %>
+                <!-- End Navbar -->
+                <div class="row d-flex">
+                    <div class="col-md-2">
+                        <!-- Sidebar -->
+                        <%- include('side-bar.ejs') %>
+                    </div>
+                        <!-- End Sidebar -->
+                        <!-- Main  Body -->
+                    <div class="col-md-10">
+                            <div class="main">
+                                <div class="breadcrumb d-flex align-items-center gap-2">
+                                    <span class="fs-12 fw-bold"> Cars </span>
+                                    <img src="./assets/images/Vector.svg" alt="arrow right" style="width: 10px; height: 10px;">
+                                    <span class="active fs-12" style="font-weight: 300;">List Car</span>
+                                </div>
+                               <%- body %>    
+                            </div>
+                    </div>
+                        <!-- End Main Body -->
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+    </main>
+
+    <!-- Bootstrap Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+    </script>
+    <script src="/javascripts/sweetalert2.min.js"></script>
+  </body>
+</html>
