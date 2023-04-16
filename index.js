@@ -4,6 +4,8 @@ const path = require('path');
 const controller = require('./controller/CarController')
 const homeRoutes = require('./routes/car-routes');
 const PUBLIC_DIRECTORY = path.join(__dirname, "public");
+const uploadOnMemory = require('./uploadOnMemory');
+const cloudinary = require('./cloudinary');
 const port = 8000;
 
 const app = express();

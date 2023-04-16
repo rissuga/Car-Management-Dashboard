@@ -1,0 +1,58 @@
+<div class="row align-items-center mt-3">
+    <div class="col-md-6">
+      <h1 class="main-title fs-20 m-0 fw-bold">List Car</h1>
+    </div>
+    <div class="col-md-6 d-flex justify-content-end">
+      <a class="btn btn-primary text-white fs-14 fw-bold" href="/add">
+        <img class="me-2" src="./assets/images/fi_plus.svg" alt="plus" />
+        Add New cars
+      </a>
+    </div>
+</div>
+
+<div class="row">
+    <div class="filter d-flex gap-3 my-4">
+      <button class="btn btn-outline-primary active">All</button>
+      <button class="btn btn-outline-secondary">Small</button>
+      <button class="btn btn-outline-secondary">Medium</button>
+      <button class="btn btn-outline-secondary">Large</button>
+    </div>
+</div>
+
+<div class="cars-container">
+    <div class="row">
+        <!-- Card -->
+        <% car.forEach((car) => { %>
+        <div class="col-md-4 mt-4">
+            <div class="card">
+                <img src="<%= car.image %>" alt="car">
+                <div class="car-body p-0">
+                    <h5 class="card-title mt-3 mb-1 fs-14" style="font-weight: 400;"><%= car.name %></h5>
+                    <p class="card-harga mb-1 fs-16 fw-bold">Rp <%= car.rentPrice/1000 %> .000 / hari </p>
+                    <div class="card-info mt-3">
+                        <div class="info">
+                          <p class="clock d-flex fs-14">
+                            <img class="me-2" src="./assets/images/fi_clock.svg" alt="clock icon" />
+                            <span class="ml-2 fw-300">Updated at one on</span>
+                          </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="row mt-4">
+                    <div class="col-md-6">
+                      <a href="/do-delete/<%= car.id %>" class="delete_btn font-weight-bold btn btn-outline-danger d-flex align-items-center justify-content-center" style="width: 100%">
+                        <img class="me-2" src="./assets/images/fi_trash-2.svg" alt="" />Delete
+                      </a>
+                    </div>
+                    <div class="col-md-6">
+                      <a href="/update/<%=car.id%>" style="width: 100%;"
+                        class=" edit_btn font-weight-bold btn btn-success btn-outline-success d-flex align-items-center justify-content-center text-white me-0"
+                        >
+                        <img class="me-2" src="./assets/images/fi_edit.svg" alt="" />Edit</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <% }) %>
+    </div>
+</div>
