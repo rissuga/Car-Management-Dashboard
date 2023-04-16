@@ -1,11 +1,11 @@
 const express = require('express');
 const expressLayouts =  require('express-ejs-layouts');
+const flash = require('connect-flash');
+const cookieParser = require('cookie-parser');
+const session = require('express-session');
 const path = require('path');
-const controller = require('./controller/CarController')
 const homeRoutes = require('./routes/car-routes');
 const PUBLIC_DIRECTORY = path.join(__dirname, "public");
-const uploadOnMemory = require('./uploadOnMemory');
-const cloudinary = require('./cloudinary');
 const port = 8000;
 
 const app = express();
@@ -21,11 +21,20 @@ app.set('layout', 'app');
 // Set PUBLIC_DIRECTORY sebagai static files di express
 app.use(express.static(PUBLIC_DIRECTORY));
 
+// Express flash
+app.use(cookieParser('keyboard cat'));
+// app.use(session({ cookie: { maxAge: 60000 }}));
+app.use(session({
+    secret: process.env.SECRET,
+    resave: false,
+    saveUninitialized: true
+  }));
+app.use(flash());
+
 app.use(express.urlencoded({ extended: true }));
 
 // Routes
 app.use(homeRoutes.routes);
-
 
 
 app.listen(port, ()=>{

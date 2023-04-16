@@ -20,6 +20,9 @@
   .fw-700{
     font-weight: 700;
   }
+  .fw-500{
+    font-weight: 500;
+  }
 
   .fs-12 {
     font-size: 12px;
@@ -169,6 +172,32 @@
   
   .main {
     padding: 120px 5px !important;
+  }
+
+  .main .message-success{
+    background-color: #73CA5C;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 12px 16px;
+    gap: 10px;
+    margin: auto;
+    width: 550px;
+    height: 48px;
+    color: #fff;
+  }
+
+  .main .message-error{
+    background-color: #151515;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 12px 16px;
+    gap: 10px;
+    margin: auto;
+    width: 550px;
+    height: 48px;
+    color: #fff;
   }
 
   .main .btn-primary {

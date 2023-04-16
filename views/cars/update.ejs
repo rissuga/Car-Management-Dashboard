@@ -28,6 +28,7 @@
             <label class=" form-label col-md-2 fs-12 col-form-label d-flex align-items-center " >Ukuran<span>&#42;</span></label >
             <div class="col-md-10">
                 <select name="type" value="<%= car.type %>" class="form-select" id="type" style="width: 400px;">
+                    <option selected value="<%=car.type %>" hidden><%=car.type %></option>
                     <option value="Small">Small</option>
                     <option value="Medium">Medium</option>
                     <option value="Large">Large</option>

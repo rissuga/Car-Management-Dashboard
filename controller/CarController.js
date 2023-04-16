@@ -3,9 +3,24 @@ const cloudinary = require('../cloudinary');
 const middleware = require('../middleware/middleware');
 
 async function index(req,res) {
-  const car = await Car.findAll();
+  const message = req.flash('success');
+  const error = req.flash('error');
+  Car.findAll().then(car=>{
+        res.render("cars/index", {
+            message: message,
+            data: car,
+            error: error
+        })
+    })
 
-  res.render('cars/index', {car});
+  // const message = req.flash('success');
+  // const error = req.flash('error');
+  // try{
+  //   const car = await Car.findAll()
+  //   res.render('cars/index', {car});
+  // }catch{
+  //   res.status(404).json();
+  // }
 }
 
 function add(req,res){
@@ -27,22 +42,21 @@ async function doAdd(req,res){
     }
 
     const {name, rentPrice, type} = req.body;
+    try{
+      await Car.create({name,rentPrice,type,image: result.url})
+      req.flash('success', 'Data berhasil disimpan');
+      res.redirect('/');
+    }catch{
+      req.flash('error', 'Data tidak berhasil disimpan');
+      res.redirect('/');
+    }
     
-    const car = await Car.create({name,rentPrice,type,image: result.url});
-    res.redirect('/');
   });
 
   // console.log('req.body', req.body);
  
 }
 
-async function doDelete(req,res){
-  const ids = req.car;
-    await Car.destroy({
-        where: {id : ids}
-    })
-  res.redirect('/');  
-}
 
 async function update(req,res){
   const id = req.params.id;
@@ -70,20 +84,29 @@ async function doUpdate(req,res){
       }
 
       const {name, rentPrice, type} = req.body;
-
-      await Car.update({name, rentPrice, type, image: result.url}, {where:{id: idCar}});
-      res.redirect("/");
+      try{
+        await Car.update({name, rentPrice, type, image: result.url}, {where:{id: idCar}});
+        req.flash('success', 'Data berhasil disimpan');
+        res.redirect("/");
+      }catch{
+        req.flash('error', 'Data tidak berhasil disimpan');
+        res.redirect("/");
+      }
     });
-//   try{
-//     const idCar = req.params.id;
+}
 
-//     await Car.update(req.body, {where: {id: idCar}})
-//     res.redirect("/");
-//   } catch(error){
-//     console.log('error', error);
-//   // }
-
-// }
+async function doDelete(req,res){
+  const ids = req.car;
+  try{
+      await Car.destroy({
+          where: {id : ids}
+      })
+    req.flash('error', 'Data berhasil dihapus');
+    res.redirect('/');  
+  }catch{
+    req.flash('error', 'Data tidak berhasil dihapus');
+    res.redirect('/');
+  }
 }
 
 
