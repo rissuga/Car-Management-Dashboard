@@ -26,17 +26,17 @@
     <main>
         <div class="row mx-0 d-flex">
             <!-- Side Menu -->
-            <%- include('side-menu.ejs') %>
+            <%- include('_layout/side-menu.ejs') %>
             <!-- End Side Menu -->
 
             <div class="col-md-12 rigth-wrap px-0">
                 <!-- Navbar -->
-                <%- include('navbar.ejs') %>
+                <%- include('_layout/navbar.ejs') %>
                 <!-- End Navbar -->
                 <div class="row d-flex">
                     <div class="col-md-2">
                         <!-- Sidebar -->
-                        <%- include('side-bar.ejs') %>
+                        <%- include('_layout/side-bar.ejs') %>
                     </div>
                         <!-- End Sidebar -->
                         <!-- Main  Body -->
@@ -47,6 +47,7 @@
                                 <img src="./assets/images/Vector.svg" alt="arrow right" style="width: 10px; height: 10px;">
                                 <span class="active fs-12" style="font-weight: 300;">List Car</span>
                             </div>
+                            <%- body %>
                          </div>
                     </div>
                         <!-- End Main Body -->
