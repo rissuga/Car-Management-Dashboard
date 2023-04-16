@@ -1,4 +1,4 @@
-<% if (message.length) { %>
+ <% if (message.length) { %>
   <div class="alert message-success alert-dismissible fade show fs-16 " id="alert-successs" role="alert">
     <p class="fw-500"><%= message %></p>
     <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"><i class="fa-solid fa-x" style="color: #ffffff;"></i></button>
@@ -10,7 +10,7 @@
       <strong><%= error %></strong>
       <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"><i class="fa-solid fa-x" style="color: #ffffff;"></i></button>
     </div>
-    <% } %>
+  <% } %>
 
 <div class="row align-items-center mt-3">
     <div class="col-md-6">
@@ -59,7 +59,7 @@
                       </a>
                     </div>
                     <div class="col-md-6">
-                      <a href="/update/<%=car.id%>" style="width: 100%;"
+                      <a href="/update/<%=car.id%>" style="width: 100%;" type="button"
                         class=" edit_btn font-weight-bold btn btn-success btn-outline-success d-flex align-items-center justify-content-center text-white me-0"
                         >
                         <img class="me-2" src="./assets/images/fi_edit.svg" alt="" />Edit</a>

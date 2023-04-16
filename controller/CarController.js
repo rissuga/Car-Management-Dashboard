@@ -12,15 +12,6 @@ async function index(req,res) {
             error: error
         })
     })
-
-  // const message = req.flash('success');
-  // const error = req.flash('error');
-  // try{
-  //   const car = await Car.findAll()
-  //   res.render('cars/index', {car});
-  // }catch{
-  //   res.status(404).json();
-  // }
 }
 
 function add(req,res){
@@ -65,9 +56,12 @@ async function update(req,res){
 }
 
 async function doUpdate(req,res){
+  console.log('req.body', req.body);
+
   const idCar = req.params.id;
   if(!req.file){
-    await Car.update(req.body, {where: {id: idCar}})
+    await Car.update(req.body, {where: {id: idCar}});
+    req.flash('success', 'Data berhasil disimpan');
     res.redirect("/");
     return;
   }
@@ -87,7 +81,7 @@ async function doUpdate(req,res){
       try{
         await Car.update({name, rentPrice, type, image: result.url}, {where:{id: idCar}});
         req.flash('success', 'Data berhasil disimpan');
-        res.redirect("/");
+        res.redirect('/');
       }catch{
         req.flash('error', 'Data tidak berhasil disimpan');
         res.redirect("/");
