@@ -1,3 +1,5 @@
+
+
  <% if (message.length) { %>
   <div class="alert message-success alert-dismissible fade show fs-16 " id="alert-successs" role="alert">
     <p class="fw-500"><%= message %></p>
@@ -52,21 +54,46 @@
                         </div>
                     </div>
                 </div>
+
                 <div class="row mt-4">
                     <div class="col-md-6">
-                      <a href="/do-delete/<%= car.id %>" class="delete_btn font-weight-bold btn btn-outline-danger d-flex align-items-center justify-content-center" style="width: 100%">
+                      <a href="/do-delete/<%= car.id %>" id="myBtn" type="button" data-bs-toggle="modal"  data-bs-target="#modalCar" class="myBtn delete_btn font-weight-bold btn btn-outline-danger d-flex align-items-center justify-content-center" style="width: 100%">
                         <img class="me-2" src="./assets/images/fi_trash-2.svg" alt="" />Delete
                       </a>
                     </div>
                     <div class="col-md-6">
                       <a href="/update/<%=car.id%>" style="width: 100%;" type="button"
-                        class=" edit_btn font-weight-bold btn btn-success btn-outline-success d-flex align-items-center justify-content-center text-white me-0"
-                        >
+                        class=" edit_btn font-weight-bold btn btn-success btn-outline-success d-flex align-items-center justify-content-center text-white me-0">
                         <img class="me-2" src="./assets/images/fi_edit.svg" alt="" />Edit</a>
                     </div>
                 </div>
             </div>
+          </div> 
+
+          
+      <!-- The Modal -->
+      <div id="myModal<%= car.id %>" class="modal myModal">
+
+        <!-- Modal content -->
+        <div class="modal-content">
+          <!-- <span class="close">&times;</span> -->
+          <img class="" src="./assets/images/img-BeepBeep.svg" alt="images">
+          <h6 class="mt-4">Menghapus data mobil</h6>
+          <p class="mt-2">Setelah dihapus, data mobil tidak dapat dikembalikan. Yakin ingin menghapus? </p>
+          
+          <div class="buttons mt-3">
+            <a href="/do-delete/<%= car.id %>" class="btn-yes">Ya</a>
+            <button type="button" class="close">Tidak</button>
+          </div>
         </div>
-        <% }) %>
-    </div>
-</div>
+
+      </div>
+
+          
+          <% }) %>
+        </div>
+      </div>
+      
+      
+      
+      
