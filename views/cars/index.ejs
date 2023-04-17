@@ -53,7 +53,8 @@
                         <div class="info">
                           <p class="clock d-flex fs-14">
                             <img class="me-2" src="./assets/images/fi_clock.svg" alt="clock icon" />
-                            <span class="ml-2 fw-300">Updated at <%=  car?.updatedAt %></span>
+                            <span class="ml-2 fw-300">Updated at <%= new Date(Date.parse(car.updatedAt)).toLocaleString('en-US', {
+                              timeZone: 'Asia/Jakarta' }); %></span>
                           </p>
                         </div>
                     </div>
