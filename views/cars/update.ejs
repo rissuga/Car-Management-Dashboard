@@ -1,16 +1,15 @@
-<h1 class="main-title fs-20 mt-3 mb-0 fw-bold">Update Car Information</h1>
+<div class="breadcrumb d-flex align-items-center gap-2">
+    <span class="fs-12 fw-bold"> Cars </span>
+    <img src="../assets/images/Vector.svg" alt="arrow right" style="width: 10px; height: 10px;">
+    <span class="active fs-12 fw-bold" style="font-weight: 300;">List Car</span>
+    <img src="../assets/images/Vector.svg" alt="arrow right" style="width: 10px; height: 10px;">
+    <span class="active fs-12" style="font-weight: 300;">Update Car Information</span>
+</div>
 
-<!-- <form action="/do-update/<%= car.id %>" method="POST" enctype="multipart/form-data">
-    <input type="name" class="form-control mt-3" id="name" name="name" value="<%= car.name %>" style="width: 400px;"/>
-    <input type="name" class="form-control mt-3" id="rentPrice" name="rentPrice" value="<%= car.rentPrice %>" style="width: 400px;"/>
-    <input type="name" class="form-control mt-3" id="name" name="type" value="<%= car.type %>" style="width: 400px;"/>
-    <input class="form-control mt-3" type="file" id="image" name="image" value="<%= car.image %>" placeholder="/images/image_1.png" style="height: 32px" />
+<h1 class="main-title fs-20 mt-5 mb-0 fw-bold">Update Car Information</h1>
 
-    <a class="btn btn-outline-primary fs-14" href="/"> Cancel </a>
-    <button type="submit" class="btn btn-primary fs-14 ms-3">Save</button>
-</form> -->
 <form action="/do-update/<%= car.id %>"  method="POST" enctype="multipart/form-data">
-    <div class="form-card py-3 px-3 mt-3">
+    <div class="form-card py-0 px-3 mt-0">
         <div class="row">
             <label class=" form-label col-md-2 fs-12 col-form-label d-flex align-items-center">Nama<span>&#42;</span>
             </label>

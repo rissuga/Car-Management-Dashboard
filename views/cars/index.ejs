@@ -1,4 +1,8 @@
-
+<div class="breadcrumb d-flex align-items-center gap-2">
+  <span class="fs-12 fw-bold"> Cars </span>
+  <img src="../assets/images/Vector.svg" alt="arrow right" style="width: 10px; height: 10px;">
+  <span class="active fs-12" style="font-weight: 300;">List Car</span>
+</div>
 
  <% if (message.length) { %>
   <div class="alert message-success alert-dismissible fade show fs-16 " id="alert-successs" role="alert">
@@ -43,13 +47,13 @@
             <div class="card">
                 <img src="<%= car.image %>" alt="car">
                 <div class="car-body p-0">
-                    <h5 class="card-title mt-3 mb-1 fs-14" style="font-weight: 400;"><%= car.name %></h5>
+                    <h5 class="card-title mt-3 mb-1 fs-14" style="font-weight: 400;"><%= car.name %> / <%= car.type %></h5>
                     <p class="card-harga mb-1 fs-16 fw-bold">Rp <%= car.rentPrice/1000 %> .000 / hari </p>
                     <div class="card-info mt-3">
                         <div class="info">
                           <p class="clock d-flex fs-14">
                             <img class="me-2" src="./assets/images/fi_clock.svg" alt="clock icon" />
-                            <span class="ml-2 fw-300">Updated at one on</span>
+                            <span class="ml-2 fw-300">Updated at <%=  car?.updatedAt %></span>
                           </p>
                         </div>
                     </div>
@@ -82,14 +86,12 @@
           <p class="mt-2">Setelah dihapus, data mobil tidak dapat dikembalikan. Yakin ingin menghapus? </p>
           
           <div class="buttons mt-3">
-            <a href="/do-delete/<%= car.id %>" class="btn-yes">Ya</a>
+            <a href="/do-delete/<%= car.id %>" class="btn-yes" >Ya</a>
             <button type="button" class="close">Tidak</button>
           </div>
         </div>
 
-      </div>
-
-          
+      </div>          
           <% }) %>
         </div>
       </div>
